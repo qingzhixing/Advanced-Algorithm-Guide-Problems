@@ -2,8 +2,6 @@
 #include <vector>
 using namespace std;
 
-const int MAX_N = 15;
-
 int n;
 vector<int> result;
 
