@@ -53,12 +53,6 @@ double division(int l, int r)
 	// 递归求左右子区间最小值
 	double best = min(division(l, mid), division(mid + 1, r));
 
-	// best 已达到理论最小
-	if (best == 0)
-	{
-		return 0;
-	}
-
 	// 现在我们考虑跨区间匹配的部分
 	// 归并：把 points[l..r] 按 y 升序整理
 	{
@@ -80,6 +74,12 @@ double division(int l, int r)
 		{
 			points[l + t] = tmp[t];
 		}
+	}
+
+	// best 已达到理论最小
+	if (best == 0)
+	{
+		return 0;
 	}
 
 	// 筛选 x 在 [mid_x - best, mid_x + best] 的点
